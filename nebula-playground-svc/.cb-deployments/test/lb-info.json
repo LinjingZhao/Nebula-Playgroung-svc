@@ -1,0 +1,24 @@
+{
+  "targetGroupPairInfoList": [
+    {
+      "targetGroups": [
+        {
+          "name": "arn:aws:elasticloadbalancing:us-east-1:577121982548:targetgroup/nebula-play-test3-target-443/5747fa6eec032685"
+        },
+        {
+          "name": "arn:aws:elasticloadbalancing:us-east-1:577121982548:targetgroup/nebula-play-test3-target-8443/890c5140c59bc143"
+        }
+      ],
+      "prodTrafficRoute": {
+        "listenerArns": [
+          "arn:aws:elasticloadbalancing:us-east-1:577121982548:listener/app/nebula-playground/a119b7dbd9488177/9d69bff30132e48c"
+        ]
+      },
+      "testTrafficRoute": {
+        "listenerArns": [
+          "arn:aws:elasticloadbalancing:us-east-1:577121982548:listener/app/nebula-playground/a119b7dbd9488177/b68915d15e409d41"
+        ]
+      }
+    }
+  ]
+}

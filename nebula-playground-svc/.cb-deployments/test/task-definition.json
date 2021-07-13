@@ -1,0 +1,57 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "nebula-playground-svc-container",
+      "image": "063473290800.dkr.ecr.us-east-1.amazonaws.com/service/nebula-playground-svc:latest",
+      "cpu": 256,
+      "memory": 1940,
+      "portMappings": [
+        {
+          "containerPort": 443,
+          "hostPort": 0,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [
+        {
+          "name": "stack",
+          "value": "test"
+        },
+        {
+          "name": "appname",
+          "value": "nebula-playground-svc"
+        },
+        {
+          "name": "AWS_DEFAULT_REGION",
+          "value": "us-east-1"
+        },
+        {
+          "name": "JAVA_OPTS",
+          "value": "-Xms1024m -Xmx1024m -XX:+UseG1GC -XX:MaxMetaspaceSize=128m"
+        },
+        {
+          "name": "key",
+          "value": "test"
+        },
+        {
+          "name": "newrelic",
+          "value": "false"
+        },
+        {
+          "name": "aep-process-type",
+          "value": "nebula-playground-svc"
+        }
+      ],
+      "privileged": false,
+      "dockerLabels": {
+        "component_type": "svc",
+        "environment": "test",
+        "owned_by": "nebula",
+        "system_name": "nebula-playground-svc"
+      }
+    }
+  ],
+  "family": "test-nebula-playground-svc",
+  "taskRoleArn": "arn:aws:iam::577121982548:role/task-nebula-playground-svc-test"
+}

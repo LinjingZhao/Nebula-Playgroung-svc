@@ -1,0 +1,13 @@
+{
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:577121982548:loadbalancer/app/nebula-playground/a119b7dbd9488177",
+      "containerName": "nebula-playground-svc-container",
+      "containerPort": 443
+    }
+  ],
+  "desiredCount": 1,
+  "launchType": "EC2",
+  "schedulingStrategy": "REPLICA",
+  "healthCheckGracePeriodSeconds": 60
+}

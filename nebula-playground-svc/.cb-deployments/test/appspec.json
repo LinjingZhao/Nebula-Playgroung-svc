@@ -1,0 +1,17 @@
+{
+  "version": 0.0,
+  "Resources": [
+    {
+      "TargetService": {
+        "Type": "AWS::ECS::Service",
+        "Properties": {
+          "TaskDefinition": "",
+          "LoadBalancerInfo": {
+            "ContainerName": "nebula-playground-svc-container",
+            "ContainerPort": 443
+          }
+        }
+      }
+    }
+  ]
+}

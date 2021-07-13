@@ -1,0 +1,13 @@
+ version: '2'
+ services:
+   app:
+     build: .
+     ports:
+      - "8443:443"
+     volumes:
+      - ./nebula-playground-application/src/main/resources:/conf
+     environment:
+      - stack=local
+      - aep-process-type=nebula-playground-svc
+      - appname=nebula-playground-svc
+      - JAVA_OPTS=-Xms512m -Xmx512m

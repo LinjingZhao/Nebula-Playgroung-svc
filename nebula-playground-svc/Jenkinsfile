@@ -1,0 +1,26 @@
+@Library(['v1-jenkins-pipeline-library', 'v1-jenkins-pipeline-library-java'])_
+javaEcsPipeline(
+    buildParams: [
+        version: "11",
+        updateVersion: true,
+        ],
+    systemName: "nebula-playground-svc",
+    imageNamespace: "service",
+    performSonarScan: true,
+    multipleTestAccountDeploy: false,
+
+    deliveryStageDefinitions: [
+        test: [
+            cluster: "test-private",
+            runIntegrationTests: false,
+            gitBranchPattern: "^(master|main)\$"
+        ],
+        
+        prod: [
+            cluster: "prod-private",
+            runIntegrationTests: false,
+            gitBranchPattern: "^(master|main)\$"
+        ]
+        
+    ]
+)
